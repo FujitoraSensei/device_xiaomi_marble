@@ -104,6 +104,11 @@ function blob_fixup() {
     vendor/lib64/libwvhidl.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
         ;;
+    vendor/bin/hw/vendor.qti.secure_element@1.2-service)
+        "${PATCHELF}" --replace-needed "jcos_nq_client-v1.so" "jcos_nq_client.so" "${2}"
+        "${PATCHELF}" --replace-needed "ls_nq_client-v1.so" "ls_nq_client.so" "${2}"
+        "${PATCHELF}" --replace-needed "se_nq_extn_client-v1.so" "se_nq_extn_client.so" "${2}"
+        ;;
     vendor/lib/libsnsdiaglog.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
         ;;
@@ -163,6 +168,9 @@ function blob_fixup() {
         ;;
     vendor/bin/hw/android.hardware.gnss-aidl-service-qti)
         "${PATCHELF}" --replace-needed "android.hardware.gnss-V1-ndk_platform.so" "android.hardware.gnss-V1-ndk.so" "${2}"
+        ;;
+    vendor/etc/media_codecs_dolby_audio.xml)
+        sed -i "/software-codec/d" "${2}"
         ;;
     esac
 }
