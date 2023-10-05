@@ -169,9 +169,6 @@ function blob_fixup() {
     vendor/bin/hw/android.hardware.gnss-aidl-service-qti)
         "${PATCHELF}" --replace-needed "android.hardware.gnss-V1-ndk_platform.so" "android.hardware.gnss-V1-ndk.so" "${2}"
         ;;
-    vendor/etc/media_codecs_dolby_audio.xml)
-        sed -i "/software-codec/d" "${2}"
-        ;;
     esac
 }
 
