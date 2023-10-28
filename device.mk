@@ -66,7 +66,27 @@ PRODUCT_PACKAGES += \
     audio.usb.default
 
 PRODUCT_PACKAGES += \
-    libvolumelistener
+    audioadsprpcd \
+    audio.r_submix.default \
+    audio.usb.default \
+    liba2dpoffload \
+    libaudioroute \
+    libbatterylistener \
+    libcirrusspkrprot \
+    libcomprcapture \
+    libexthwplugin \
+    libhdmiedid \
+    libhfp \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libsndcardparser \
+    libsndmonitor \
+    libspkrprot \
+    libssrec \
+    libtinycompress \
+    vendor.qti.hardware.pal@1.0.vendor \
+    vendor.qti.hardware.AGMIPC@1.0.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
@@ -325,11 +345,18 @@ PRODUCT_COPY_FILES += \
     $(AUDIO_HAL_DIR)/configs/common/codec2/service/1.0/c2audio.vendor.ext-arm64.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy \
     $(AUDIO_HAL_DIR)/configs/common/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml
 
-# OMX
+# Medied (OMX)
 PRODUCT_PACKAGES += \
     libOmxCore \
     libstagefrighthw
 
+PRODUCT_PACKAGES += \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxEvrcEnc \
+    libOmxG711Enc \
+    libOmxQcelp13Enc
+    
 # Mlipay
 PRODUCT_PACKAGES += \
     IFAAService
