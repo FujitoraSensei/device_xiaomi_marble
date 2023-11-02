@@ -40,4 +40,8 @@
           <item>2</item>
           <item>3</item>
      </integer-array>
+
+     <!-- Whether to show Minimum and Maximum refresh rate in display settings -->
+    <bool name="config_show_refresh_rate_controls">true</bool>
+    <bool name="config_supports_dynamic_refresh_rate_controls">true</bool>
 </resources>
